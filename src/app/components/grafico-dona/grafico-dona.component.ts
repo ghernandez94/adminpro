@@ -3,11 +3,11 @@ import { Label } from 'ng2-charts';
 import { ChartType } from 'chart.js';
 
 @Component({
-  selector: 'app-graficodona',
-  templateUrl: './graficodona.component.html',
+  selector: 'app-grafico-dona',
+  templateUrl: './grafico-dona.component.html',
   styles: []
 })
-export class GraficodonaComponent implements OnInit {
+export class GraficoDonaComponent implements OnInit {
 
   @Input() public labels: Label[] = ['Test 1', 'Test 2', 'Test 3'];
   @Input() public data: any = [100, 200, 100];

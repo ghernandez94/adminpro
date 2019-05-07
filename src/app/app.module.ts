@@ -11,14 +11,16 @@ import { APP_ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
-import { GraficodonaComponent } from './components/graficodona/graficodona.component';
+
+//Servicios
+import { SettingsService } from './services/settings.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    //GraficodonaComponent,
+    //GraficoDonaComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,7 @@ import { GraficodonaComponent } from './components/graficodona/graficodona.compo
     FormsModule,
     ChartsModule
   ],
-  providers: [],
+  providers: [SettingsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
