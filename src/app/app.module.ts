@@ -4,32 +4,33 @@ import { PagesModule } from './pages/pages.module';
 import { FormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 
-//Rutas
+// Rutas
 import { APP_ROUTES } from './app.routes';
 
-//Componentes
+// Componentes
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
 
-//Servicios
-import { SettingsService } from './services/settings.service';
+// Servicios
+import { ServiceModule } from './services/service.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    //GraficoDonaComponent,
+    // GraficoDonaComponent,
   ],
   imports: [
     BrowserModule,
     APP_ROUTES,
     PagesModule,
     FormsModule,
-    ChartsModule
+    ChartsModule,
+    ServiceModule
   ],
-  providers: [SettingsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

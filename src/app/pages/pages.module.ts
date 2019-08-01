@@ -1,5 +1,5 @@
-import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { PAGES_ROUTES } from './pages.routes';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
@@ -10,7 +10,7 @@ import { IncrementadorComponent } from './../components/incrementador/incrementa
 import { ChartsModule } from 'ng2-charts';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
-
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
     declarations: [
@@ -29,10 +29,11 @@ import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.co
         PagesComponent,
     ],
     imports: [
+        BrowserModule,
         SharedModule,
         PAGES_ROUTES,
         FormsModule,
         ChartsModule
     ]
 })
-export class PagesModule{}
+export class PagesModule {}

@@ -9,8 +9,8 @@ import { NopagefoundComponent } from './shared/nopagefound/nopagefound.component
 import { RegisterComponent } from './login/register.component';
 
 const appRoutes: Routes = [
-    { 
-        path: '', 
+    {
+        path: '',
         component: PagesComponent,
         children: [
             { path: 'dashboard', component: DashboardComponent},
@@ -24,4 +24,4 @@ const appRoutes: Routes = [
     { path: '**', component: NopagefoundComponent},
 ]
 
-export const APP_ROUTES = RouterModule.forRoot(appRoutes, {useHash: true});
+export const APP_ROUTES = RouterModule.forRoot(appRoutes, {useHash: false});

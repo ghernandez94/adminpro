@@ -29,7 +29,10 @@
     <div class="card">
       <div class="card-body">
         <h4 class="card-title"></h4>
-        <app-incrementador nombre="Progress azul" [progreso]="20" (cambioValor)="progreso1 = $event"></app-incrementador>
+        <app-incrementador leyenda="Progress azul" 
+                           [progreso]="20" 
+                           (cambioValor)="progreso1 = $event">
+        </app-incrementador>
       </div>
     </div>
   </div>
@@ -37,7 +40,10 @@
     <div class="card">
       <div class="card-body">
         <h4 class="card-title"></h4>
-        <app-incrementador nombre="Progress verde" [progreso]="50" (cambioValor)="progreso2 = $event"></app-incrementador>
+        <app-incrementador leyenda="Progress verde" 
+                           [progreso]="50" 
+                           (cambioValor)="progreso2 = $event">
+        </app-incrementador>
       </div>
     </div>
   </div>
