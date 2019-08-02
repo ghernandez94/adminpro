@@ -11,6 +11,8 @@ import { ChartsModule } from 'ng2-charts';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
     declarations: [
@@ -20,7 +22,9 @@ import { BrowserModule } from '@angular/platform-browser';
         PagesComponent,
         IncrementadorComponent,
         GraficoDonaComponent,
-        AccountSettingsComponent
+        AccountSettingsComponent,
+        PromesasComponent,
+        RxjsComponent
     ],
     exports: [
         DashboardComponent,
