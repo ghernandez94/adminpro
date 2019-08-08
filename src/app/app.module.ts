@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { PagesModule } from './pages/pages.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 
 // Rutas
@@ -28,7 +28,8 @@ import { ServiceModule } from './services/service.module';
     PagesModule,
     FormsModule,
     ChartsModule,
-    ServiceModule
+    ServiceModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
