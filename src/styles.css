@@ -7,3 +7,11 @@
 .pointer{
     cursor: pointer;
 }
+
+.break-text{
+    word-wrap: break-word;
+}
+
+.w150{
+    width: 150px;
+}

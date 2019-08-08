@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { PAGES_ROUTES } from './pages.routes';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -13,6 +14,8 @@ import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.co
 import { BrowserModule } from '@angular/platform-browser';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { PipesModule } from '../pipes/pipes.module';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
     declarations: [
@@ -24,20 +27,23 @@ import { RxjsComponent } from './rxjs/rxjs.component';
         GraficoDonaComponent,
         AccountSettingsComponent,
         PromesasComponent,
-        RxjsComponent
+        RxjsComponent,
+        ProfileComponent
+    ],
+    imports: [
+        CommonModule,
+        BrowserModule,
+        SharedModule,
+        PAGES_ROUTES,
+        FormsModule,
+        ChartsModule,
+        PipesModule
     ],
     exports: [
         DashboardComponent,
         ProgressComponent,
         Graficas1Component,
         PagesComponent,
-    ],
-    imports: [
-        BrowserModule,
-        SharedModule,
-        PAGES_ROUTES,
-        FormsModule,
-        ChartsModule
     ]
 })
 export class PagesModule {}
