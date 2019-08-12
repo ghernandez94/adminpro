@@ -11,6 +11,7 @@ export class SubirArchivoService {
 
   subirArchivo(archivo: File, tipo: string, id: string) {
 
+    // tslint:disable-next-line: no-shadowed-variable
     return new Promise((resolve, reject) => {
       const formData = new FormData();
       const xhr = new XMLHttpRequest();
