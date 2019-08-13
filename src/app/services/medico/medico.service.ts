@@ -19,7 +19,7 @@ export class MedicoService {
   }
 
   buscarMedicos(termino: string) {
-    const url = URL_SERVICIOS + '/busqueda/medicos/' + termino;
+    const url = URL_SERVICIOS + '/busqueda/custom/medicos/' + termino;
 
     return this.http.get(url)
       .pipe(

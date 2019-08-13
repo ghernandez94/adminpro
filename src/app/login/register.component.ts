@@ -47,7 +47,6 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
-    console.log(this.myForm.value);
     const usuario = new Usuario(
       this.myForm.value.nombre,
       this.myForm.value.email,

@@ -25,7 +25,7 @@ export class HospitalService {
   }
 
   buscarHospitales(termino: string) {
-    const url = URL_SERVICIOS + '/busqueda/hospitales/' + termino;
+    const url = URL_SERVICIOS + '/busqueda/custom/hospitales/' + termino;
 
     return this.http.get( url )
       .pipe(

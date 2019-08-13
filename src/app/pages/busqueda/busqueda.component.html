@@ -1,0 +1,92 @@
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-header">
+        Usuarios
+      </div>
+      <div class="card-body p-1">
+        <div *ngIf="!usuarios.length > 0" class="alert alert-primary" role="alert">
+          No se encontraron coincidencias
+        </div>
+        <table *ngIf="usuarios.length > 0" class="table table-hover">
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Nombre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let usuario of usuarios">
+              <td>
+                <img [src]="usuario.img | imagen" class="w50 img-circle">
+              </td>
+              <td>{{usuario.nombre}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-header">
+        Médicos
+      </div>
+      <div class="card-body p-1">
+        <div *ngIf="!medicos.length > 0" class="alert alert-primary" role="alert">
+          No se encontraron coincidencias
+        </div>
+        <table *ngIf="medicos.length > 0" class="table table-hover">
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Nombre</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let medico of medicos">
+              <td>
+                <img [src]="medico.img | imagen: 'medico'" class="w50 img-circle pointer">
+              </td>
+              <td>{{ medico.nombre }}</td>
+              <td>
+                <button [routerLink]="['/medico', medico._id]" class="btn btn-primary"><i
+                    class="fa fa-edit"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-header">
+        Hospitales
+      </div>
+      <div class="card-body p-1">
+        <div *ngIf="!hospitales.length > 0" class="alert alert-primary" role="alert">
+          No se encontraron coincidencias
+        </div>
+        <table *ngIf="hospitales.length > 0" class="table table-hover">
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Nombre</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let hospital of hospitales">
+              <td>
+                <img [src]="hospital.img | imagen: 'hospital'" class="w50 img-circle">
+              </td>
+              <td>{{ hospital.nombre }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

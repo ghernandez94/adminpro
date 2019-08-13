@@ -26,7 +26,7 @@ export class UsuariosComponent implements OnInit {
       .subscribe( (resp) => {
         // Si cambia la imagen del usuario logueado, actualiza el local storage.
         if ( this.usuarioService.usuario._id === resp.data._id ) {
-          this.usuarioService.guardarStorage(this.usuarioService.token, resp.data);
+          this.usuarioService.guardarStorage(this.usuarioService.token, resp.data, this.usuarioService.menu);
         }
 
         this.cargarUsuarios();
