@@ -10,6 +10,7 @@ declare var $: any;
 })
 export class ModalUploadComponent implements OnInit {
   @ViewChild('inputFile') inputFile: ElementRef;
+  uploading = false;
   id: string;
   img = 'xxx';
   tipo: string;
@@ -53,18 +54,24 @@ export class ModalUploadComponent implements OnInit {
       return;
     }
 
+    this.uploading = false;
     this.imagenSubir = archivo;
     const reader = new FileReader();
     const urlImagenTemp = reader.readAsDataURL( archivo );
 
-    reader.onloadend = () => this.imagenTemp = (reader.result as string);
+    reader.onloadend = () => {
+      this.imagenTemp = (reader.result as string);
+    };
   }
 
   cambiarImagen() {
+    this.uploading = true;
     this.subirArchivoService.subirArchivo(this.imagenSubir, this.tipo, this.id)
       .then( resp => {
-        this.modalUploadService.finish.emit(resp);
         this.hide();
-      });
+        this.modalUploadService.finish.emit(resp);
+        swal('Imagen actualizada correctamente', '', 'success');
+      })
+      .catch( (err) => console.log(err) ) ;
   }
 }

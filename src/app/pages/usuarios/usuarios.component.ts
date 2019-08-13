@@ -23,9 +23,13 @@ export class UsuariosComponent implements OnInit {
     this.cargarUsuarios();
 
     this.modalUploadService.finish
-      .subscribe( (res) => {
+      .subscribe( (resp) => {
+        // Si cambia la imagen del usuario logueado, actualiza el local storage.
+        if ( this.usuarioService.usuario._id === resp.data._id ) {
+          this.usuarioService.guardarStorage(this.usuarioService.token, resp.data);
+        }
+
         this.cargarUsuarios();
-        swal('Imagen actualizada correctamente', res.data.email, 'success');
       });
   }
 
@@ -94,8 +98,8 @@ export class UsuariosComponent implements OnInit {
       .subscribe();
   }
 
-  cambiarImagen(id, img, tipo) {
-    this.modalUploadService.show.emit({id, img, tipo});
+  cambiarImagen(id: string, img: string) {
+    const tipo = 'usuario';
+    this.modalUploadService.mostrar(id, img, tipo);
   }
-
 }

@@ -8,12 +8,13 @@ import { Usuario } from 'src/app/models/usuario.model';
   styles: []
 })
 export class SidebarComponent implements OnInit {
-  usuario: Usuario;
-
   constructor( public _sidebar: SidebarService, private usuarioService: UsuarioService) { }
 
   ngOnInit() {
-    this.usuario = this.usuarioService.usuario;
+  }
+
+  public get usuario(): Usuario {
+    return this.usuarioService.usuario;
   }
 
   logout() {

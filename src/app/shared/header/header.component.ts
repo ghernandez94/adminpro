@@ -8,12 +8,13 @@ import { Usuario } from 'src/app/models/usuario.model';
   styles: []
 })
 export class HeaderComponent implements OnInit {
-  usuario: Usuario;
-
   constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit() {
-    this.usuario = this.usuarioService.usuario;
+  }
+
+  public get usuario(): Usuario {
+    return this.usuarioService.usuario;
   }
 
   logout() {

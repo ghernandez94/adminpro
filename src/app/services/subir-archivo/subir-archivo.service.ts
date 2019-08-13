@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { reject } from 'q';
 import { URL_SERVICIOS } from 'src/app/config/config';
 
 @Injectable({
@@ -10,8 +9,22 @@ export class SubirArchivoService {
   constructor() { }
 
   subirArchivo(archivo: File, tipo: string, id: string) {
+    let urlTipo: string;
+    switch (tipo) {
+      case 'usuario':
+        urlTipo = 'usuarios';
+        break;
+      case 'hospital':
+        urlTipo = 'hospitales';
+        break;
+      case 'medico':
+        urlTipo = 'medicos';
+        break;
+      default:
+        console.log('El tipo de imagen no existe.');
+        return;
+    }
 
-    // tslint:disable-next-line: no-shadowed-variable
     return new Promise((resolve, reject) => {
       const formData = new FormData();
       const xhr = new XMLHttpRequest();
@@ -29,7 +42,7 @@ export class SubirArchivoService {
         }
       };
 
-      const url = `${URL_SERVICIOS}/upload/${tipo}/${id}`;
+      const url = `${URL_SERVICIOS}/upload/${urlTipo}/${id}`;
       xhr.open('PUT', url, true);
       xhr.send(formData);
     });

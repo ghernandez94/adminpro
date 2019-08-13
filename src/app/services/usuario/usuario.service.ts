@@ -107,7 +107,7 @@ export class UsuarioService {
   }
 
   cambiarImagen(archivo: File, id: string) {
-    this.subirArchivoService.subirArchivo(archivo, 'usuarios', id)
+    this.subirArchivoService.subirArchivo(archivo, 'usuario', id)
       .then( (resp: any) => {
         this.usuario.img = resp.data.img;
         swal('Imagen actualizada', this.usuario.nombre, 'success');

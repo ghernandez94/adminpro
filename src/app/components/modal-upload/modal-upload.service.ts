@@ -8,4 +8,8 @@ export class ModalUploadService {
   public finish = new EventEmitter();
 
   constructor() { }
+
+  mostrar(id, img, tipo) {
+    this.show.emit({id, img, tipo});
+  }
 }
