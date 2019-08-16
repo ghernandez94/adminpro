@@ -5,7 +5,7 @@
         Usuarios
       </div>
       <div class="card-body p-1">
-        <div *ngIf="!usuarios.length > 0" class="alert alert-primary" role="alert">
+        <div *ngIf="!(usuarios.length > 0)" class="alert alert-primary" role="alert">
           No se encontraron coincidencias
         </div>
         <table *ngIf="usuarios.length > 0" class="table table-hover">
@@ -33,7 +33,7 @@
         Médicos
       </div>
       <div class="card-body p-1">
-        <div *ngIf="!medicos.length > 0" class="alert alert-primary" role="alert">
+        <div *ngIf="!(medicos.length > 0)" class="alert alert-primary" role="alert">
           No se encontraron coincidencias
         </div>
         <table *ngIf="medicos.length > 0" class="table table-hover">
@@ -66,7 +66,7 @@
         Hospitales
       </div>
       <div class="card-body p-1">
-        <div *ngIf="!hospitales.length > 0" class="alert alert-primary" role="alert">
+        <div *ngIf="!(hospitales.length > 0)" class="alert alert-primary" role="alert">
           No se encontraron coincidencias
         </div>
         <table *ngIf="hospitales.length > 0" class="table table-hover">

@@ -70,6 +70,29 @@ export class UsuarioService {
     this.router.navigate(['/login']);
   }
 
+  renovarToken() {
+    const url = URL_SERVICIOS + '/login/renovartoken';
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + this.token
+      })
+    };
+
+    return this.http.get(url, httpOptions)
+      .pipe(
+        map((resp: any) => {
+          this.token = resp.token;
+          localStorage.setItem('token', this.token);
+          console.log('Token renovado');
+          return true;
+        }),
+        catchError( err => {
+          swal('Error en el login', 'No fue posible renovar el token', 'error');
+          return throwError(err);
+        }
+      ));
+  }
+
   guardarStorage(token: string, usuario: any, menu: any[]) {
     localStorage.setItem('token', token);
     localStorage.setItem('usuario', JSON.stringify(usuario));
